@@ -90,7 +90,7 @@ const gameMechanics = (() => {
         else currentPlayer = player1;
     }
 
-    return {clickFunction };
+    return { clickFunction };
 })();
 
 const gameboard = (() => {
@@ -124,4 +124,20 @@ const gameboard = (() => {
     }
     return { reset, placePiece, getBoard };
 })();
+const gameMenu = (() => {
+    const _gameBox = document.getElementById('gameBox')
+    const _menu = document.getElementById('gameMenu');
+    let _displayed = true;
+    _gameBox.appendChild(_menu);
+    function toggleDisplay() {
+        if (_displayed) {
+            _menu.classList.add('hidden');
+        } else {
+            _menu.classList.remove('hidden');
+        }
+        _displayed = !_displayed;
+    }
+
+    return {toggleDisplay};
+})()
 
