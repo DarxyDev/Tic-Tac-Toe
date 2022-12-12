@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,47 @@
     <link rel="stylesheet" href="style.css">
     <script src="myscript.js" defer></script>
 </head>
+
 <body>
     <div id="gameBox" class="box">
         <div id="gameBoard"></div>
-        <div id="gameMenu"></div>
+        <div id="gameMenu">
+            <menuScreen id="menu_start" class="menuScreen">
+                <h1>Tic-Tac-Toe</h1>
+                <h3>Click to begin.</h3>
+            </menuScreen>
+            <menuScreen id="menu_playerSelect" class="menuScreen hidden">
+                <div player="1">
+                    <h1>Player 1</h1>
+                    <form class="menu_playerForm">
+                        <h3>Name: </h3><input type="text" id="input_p1-name" value="Player 1">
+                        <h3>Tile Marker: </h3> <input type="text" id="input_p1-marker" value="X">
+                    </form>
+                </div>
+                <div player="2">
+                    <h1>Player 2</h1>
+                    <form class="menu_playerForm">
+                        <h3>Name: </h3><input type="text" id="input_p2-name" value="Player 2">
+                        <h3>Tile Marker: </h3> <input type="text" id="input_p2-marker" value="O">
+                    </form>
+                </div>
+                <button id="menu_button_start-game" class="button">Start Game</button>
+            </menuScreen>
+            <menuScreen id="menu_game-over" class="menuScreen hidden">
+                <h1 id="menu_win-message">Player 1 Won!</h1>
+                <div class="menu_player-score-card box">
+                    <h3 id="menu_p1-card_name">Player 1 Wins:</h3>
+                    <h1 id="menu_p1-card_score">0</h4>
+                </div>
+                <div class="menu_player-score-card box">
+                    <h3 id="menu_p2-card_name">Player 2 Wins:</h3>
+                    <h1 id="menu_p2-card_score">0</h4>
+                </div>
+                <button id="menu_button_new-game" class="box"><h2>New Game</h2></button>
+                <button id="menu_button_play-again" class="box"><h2>Play Again</h2></button>
+            </menuScreen>
+        </div>
     </div>
 </body>
+
 </html>
